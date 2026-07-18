@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Sociedade Felina: uma jornada filosÃ³fica que desconstrÃ³i certezas e reconstrÃ³i significado, por Renan Ruan Vilas Boas.">
+  <meta name="theme-color" content="#050505">
+  <title>Sociedade Felina | Renan Ruan Vilas Boas</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Montserrat:wght@600;700&amp;family=Playfair+Display:wght@700;900&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/site.css">
+  <style>
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+#site-header.is-scrolled {
+  background: rgba(0, 0, 0, 0.94);
+  border-bottom: 1px solid rgba(220, 20, 60, 0.3);
+  backdrop-filter: blur(12px);
+}
+
+#inicio,
+#sinopse,
+#temas,
+#depoimentos,
+#autor,
+#oferta {
+  scroll-margin-top: 8.5rem;
+}
+
+a[data-cta],
+a[data-checkout] {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.offer-panel {
+  width: min(100%, 44rem);
+  margin: 0 auto;
+  padding: clamp(1.5rem, 4vw, 2.5rem);
+  background: rgba(0, 0, 0, 0.78);
+  border: 2px solid var(--primary);
+  box-shadow: 0 0 36px rgba(220, 20, 60, 0.24);
+}
+
+.offer-title {
+  margin: 0 0 1.5rem;
+  color: var(--primary);
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 7vw, 3.75rem);
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+  text-transform: uppercase;
+}
+
+.countdown {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: clamp(0.35rem, 2vw, 1rem);
+  margin-bottom: 2rem;
+}
+
+.countdown-unit {
+  display: grid;
+  min-width: clamp(4.5rem, 17vw, 7rem);
+  padding: 0.8rem 0.55rem;
+  background: #070707;
+  border: 1px solid rgba(220, 20, 60, 0.65);
+}
+
+.countdown-unit strong {
+  color: var(--primary);
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(2rem, 7vw, 3.5rem);
+  line-height: 1;
+}
+
+.countdown-unit small {
+  margin-top: 0.4rem;
+  color: rgba(255, 255, 255, 0.65);
+  font-size: clamp(0.55rem, 2vw, 0.7rem);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.countdown-separator {
+  padding-top: 0.7rem;
+  color: var(--primary);
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(2rem, 6vw, 3.25rem);
+  font-weight: 700;
+  line-height: 1;
+}
+
+.offer-price {
+  display: grid;
+  justify-items: center;
+  gap: 0.25rem;
+}
+
+.old-price {
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 1rem;
+}
+
+.old-price s {
+  color: rgba(255, 255, 255, 0.58);
+  text-decoration-color: var(--primary);
+  text-decoration-thickness: 2px;
+}
+
+.current-price {
+  color: var(--primary);
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(3.25rem, 12vw, 6rem);
+  line-height: 1;
+  text-shadow: 0 0 24px rgba(220, 20, 60, 0.35);
+}
+
+.payment-note {
+  color: rgba(255, 255, 255, 0.62);
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.author-photo-frame {
+  position: relative;
+  width: min(100%, 22rem);
+  aspect-ratio: 3 / 4;
+  margin: 0 auto;
+  overflow: hidden;
+  background: #050505;
+  border: 2px solid var(--primary);
+  box-shadow: 0 0 32px rgba(220, 20, 60, 0.2);
+}
+
+.author-photo-frame::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.38), transparent 45%);
+}
+
+.author-photo {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center 18%;
+}
+
+@media (max-width: 767px) {
+  #inicio,
+  #sinopse,
+  #temas,
+  #depoimentos,
+  #autor,
+  #oferta {
+    scroll-margin-top: 10rem;
+  }
+
+  .offer-panel {
+    padding-inline: 0.75rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+  </style>
+</head>
+<body>
+<div id="root">
+<div class="min-h-screen bg-background text-foreground">
+<header id="site-header" class="fixed top-0 w-full z-50 transition-all duration-300 bg-transparent">
+<div class="container flex items-center justify-between h-20">
+<div class="flex items-center gap-3">
+<img alt="Sociedade Felina" class="h-10 w-10" src="assets/logo-sociedade-felina.webp">
+<span class="font-display text-xl text-primary hidden sm:inline">Sociedade Felina</span>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a href="#sinopse" class="text-foreground/80 hover:text-primary transition-colors duration-200 text-sm font-body">Sinopse</a>
+<a href="#autor" class="text-foreground/80 hover:text-primary transition-colors duration-200 text-sm font-body">Sobre o Autor</a>
+<a href="#depoimentos" class="text-foreground/80 hover:text-primary transition-colors duration-200 text-sm font-body">Depoimentos</a>
+</nav>
+<a href="https://pay.hotmart.com/E106765742W?bid=1784235993918" class="bg-primary text-primary-foreground px-6 py-2 rounded-md hover:shadow-lg hover:shadow-primary/50 transition-all duration-300 text-sm font-medium" data-checkout>Comprar Agora</a>
+</div>
+</header>
+<div class="fixed top-20 left-0 right-0 z-50 bg-primary/90 py-3 px-4 war-alert">
+<div class="container text-center">
+<p class="font-body text-sm uppercase tracking-widest font-bold">⚠ ESTADO DE ALERTA: ATAQUES TERRORISTAS EM ANDAMENTO ⚠</p>
+</div>
+</div>
+<section id="inicio" class="relative w-full h-screen flex items-center justify-center overflow-hidden pt-20 war-scanlines">
+<div class="absolute inset-0 bg-cover bg-center z-0" style="background-image: url(&quot;assets/hero-sociedade-felina.webp&quot;); background-attachment: fixed;">
+<div class="absolute inset-0 bg-gradient-to-b from-black/50 via-black/70 to-black/90">
+</div>
+<div class="absolute inset-0 bg-red-900/20 mix-blend-multiply">
+</div>
+</div>
+<div class="relative z-10 container max-w-4xl text-center space-y-8">
+<h1 class="font-display text-6xl md:text-8xl font-black text-primary drop-shadow-2xl">SOCIEDADE FELINA</h1>
+<p class="font-body text-xl md:text-2xl text-foreground/90 font-bold tracking-wider">Uma Jornada de Transformação Através do Caos</p>
+<p class="font-body text-lg text-foreground/80 italic border-l-4 border-primary pl-6 max-w-2xl mx-auto">"Os homens acreditam ser livres porque são conscientes de suas ações, mas ignorantes das causas que as determinam." — Spinoza</p>
+<a href="#sinopse" class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive h-9 has-[&gt;svg]:px-3 bg-primary text-primary-foreground px-10 py-4 text-lg font-bold uppercase tracking-widest transition-all duration-200 hover:bg-primary/80 active:scale-95" data-cta="sinopse">Descubra a Verdade</a>
+</div>
+</section>
+<section class="py-8 bg-primary/30 border-y-4 border-primary">
+<div class="container max-w-5xl text-center">
+<p class="font-body text-lg text-foreground font-bold uppercase tracking-widest">🚨 LEITURA PROIBIDA EM ZONAS DE CONFLITO 🚨</p>
+<p class="font-body text-sm text-foreground/80 mt-2">Esta obra contém ideias que desafiam o Estado. Distribuição não autorizada em territórios ocupados resultará em confisco.</p>
+</div>
+</section>
+<section id="sinopse" class="py-32 bg-card border-b-8 border-primary">
+<div class="container max-w-5xl">
+<h2 class="font-display text-5xl md:text-6xl mb-16 text-primary uppercase font-black">A Obra</h2>
+<div class="space-y-16">
+<div class="space-y-6 p-8 bg-background border-l-8 border-primary war-border">
+<h3 class="font-heading text-3xl text-primary uppercase font-bold">I. O LEVIATÃ</h3>
+<p class="font-body text-lg text-foreground/85 leading-relaxed">Ivan Petrov, Ministro da Justiça de um estado totalitário, defende uma nova constituição que consolidaria o poder absoluto. Em uma entrevista tensa e reveladora, ele articula a ilusão da liberdade, o poder estatal como força inevitável, e a manipulação política que sustenta o regime. A narrativa expõe como a segurança é usada para justificar a opressão, e como o Estado se torna um Leviatã inescapável.</p>
+</div>
+<div class="space-y-6 p-8 bg-background border-l-8 border-primary war-border">
+<h3 class="font-heading text-3xl text-primary uppercase font-bold">II. CATÁBASE</h3>
+<p class="font-body text-lg text-foreground/85 leading-relaxed">Após confrontar a realidade brutal de suas ações, Ivan é levado a uma jornada de desconstrução no deserto. Aqui, ele enfrenta o vazio existencial, questiona a moralidade de suas escolhas, e confronta a ilusão do livre-arbítrio. É uma catábase: uma descida aos infernos da consciência, onde dogmas são destruídos e verdades incômodas emergem.</p>
+</div>
+<div class="space-y-6 p-8 bg-background border-l-8 border-primary war-border">
+<h3 class="font-heading text-3xl text-primary uppercase font-bold">III. ANÁBASE</h3>
+<p class="font-body text-lg text-foreground/85 leading-relaxed">Após três dias de transformação radical, Ivan emerge do deserto não como um herói, mas como um homem liberto de certezas. Ele inicia uma anábase: uma ascensão contínua em busca da verdade além do Estado, sem dogmas, sem ilusões. Uma jornada que nunca termina, porque a verdade é um processo, não um destino.</p>
+</div>
+</div>
+</div>
+</section>
+<section class="relative w-full h-screen flex items-center justify-center overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center z-0" style="background-image: url(&quot;assets/hero-vigilancia.webp&quot;); background-attachment: fixed;">
+<div class="absolute inset-0 bg-gradient-to-r from-black/90 via-black/70 to-black/50">
+</div>
+<div class="absolute inset-0 bg-red-900/30 mix-blend-multiply">
+</div>
+</div>
+<div class="relative z-10 container max-w-3xl text-left">
+<h2 class="font-display text-5xl md:text-7xl mb-8 text-primary font-black drop-shadow-2xl">VIGILÂNCIA</h2>
+<p class="font-body text-xl text-foreground/90 font-bold drop-shadow-lg">O Estado vê tudo. O Estado controla tudo. Mas será que compreende algo?</p>
+<p class="font-body text-lg text-foreground/70 drop-shadow-lg mt-6 italic">Em tempo de guerra, vigilância não é proteção: é prisão.</p>
+</div>
+</section>
+<section id="temas" class="py-32 bg-background border-b-8 border-primary">
+<div class="container max-w-5xl">
+<h2 class="font-display text-5xl md:text-6xl mb-16 text-primary uppercase font-black">Temas de Profundidade</h2>
+<div class="grid md:grid-cols-2 gap-8">
+<div class="p-8 bg-card border-2 border-primary hover:bg-primary/5 transition-all duration-300 group war-border">
+<h3 class="font-heading text-xl text-primary mb-3 uppercase font-bold group-hover:text-primary/80">PODER TOTALITÁRIO</h3>
+<p class="font-body text-foreground/75 leading-relaxed">O Estado como força inevitável que absorve a vontade individual e a reduz a nada.</p>
+</div>
+<div class="p-8 bg-card border-2 border-primary hover:bg-primary/5 transition-all duration-300 group war-border">
+<h3 class="font-heading text-xl text-primary mb-3 uppercase font-bold group-hover:text-primary/80">VIGILÂNCIA CONSTANTE</h3>
+<p class="font-body text-foreground/75 leading-relaxed">A ilusão de privacidade em um mundo onde tudo é observado, registrado, controlado.</p>
+</div>
+<div class="p-8 bg-card border-2 border-primary hover:bg-primary/5 transition-all duration-300 group war-border">
+<h3 class="font-heading text-xl text-primary mb-3 uppercase font-bold group-hover:text-primary/80">MANIPULAÇÃO DE VERDADE</h3>
+<p class="font-body text-foreground/75 leading-relaxed">Como a narrativa estatal reescreve a realidade e aprisiona mentes em ilusões.</p>
+</div>
+<div class="p-8 bg-card border-2 border-primary hover:bg-primary/5 transition-all duration-300 group war-border">
+<h3 class="font-heading text-xl text-primary mb-3 uppercase font-bold group-hover:text-primary/80">MORTE DO LIVRE-ARBÍTRIO</h3>
+<p class="font-body text-foreground/75 leading-relaxed">Determinismo causal versus a ilusão confortável de escolha pessoal.</p>
+</div>
+<div class="p-8 bg-card border-2 border-primary hover:bg-primary/5 transition-all duration-300 group war-border">
+<h3 class="font-heading text-xl text-primary mb-3 uppercase font-bold group-hover:text-primary/80">MORALIDADE CORROMPIDA</h3>
+<p class="font-body text-foreground/75 leading-relaxed">Como o Estado justifica atrocidades em nome da segurança e da ordem.</p>
+</div>
+<div class="p-8 bg-card border-2 border-primary hover:bg-primary/5 transition-all duration-300 group war-border">
+<h3 class="font-heading text-xl text-primary mb-3 uppercase font-bold group-hover:text-primary/80">TRANSFORMAÇÃO PELO SOFRIMENTO</h3>
+<p class="font-body text-foreground/75 leading-relaxed">Libertação de dogmas através do confronto brutal com a verdade nua.</p>
+</div>
+</div>
+</div>
+</section>
+<section class="relative w-full h-screen flex items-center justify-center overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center z-0" style="background-image: url(&quot;assets/hero-destruicao.webp&quot;); background-attachment: fixed;">
+<div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/80 to-transparent">
+</div>
+<div class="absolute inset-0 bg-red-900/40 mix-blend-multiply">
+</div>
+</div>
+<div class="relative z-10 container max-w-3xl text-center">
+<h2 class="font-display text-6xl md:text-8xl mb-8 text-primary font-black drop-shadow-2xl">DESTRUIÇÃO</h2>
+<p class="font-body text-xl text-foreground/90 font-bold drop-shadow-lg max-w-2xl mx-auto">Quando o Estado cai, o que permanece? E será que aqueles que o destruíram estão preparados para o vazio?</p>
+<p class="font-body text-lg text-foreground/70 drop-shadow-lg mt-6 italic">A guerra não termina com a queda do poder: ela apenas muda de forma.</p>
+</div>
+</section>
+<section id="depoimentos" class="py-32 bg-background border-b-8 border-primary">
+<div class="container max-w-5xl">
+<h2 class="font-display text-5xl md:text-6xl mb-16 text-primary uppercase font-black">Depoimentos de Leitores</h2>
+<div class="grid md:grid-cols-2 gap-8">
+<div class="p-8 bg-card border-2 border-primary war-border">
+<div class="flex items-center gap-4 mb-6">
+<img alt="Marina Sokolov" class="w-16 h-16 rounded-full object-cover border-2 border-primary" src="assets/leitor-marina.webp" loading="lazy" decoding="async">
+<div>
+<h3 class="font-heading text-lg text-primary font-bold">Marina Sokolov</h3>
+<p class="font-body text-sm text-foreground/70">Professora de Filosofia</p>
+</div>
+</div>
+<p class="font-body text-foreground/85 leading-relaxed italic">"Sociedade Felina destruiu minhas certezas. Não é uma leitura confortável, mas é absolutamente necessária. Ivan Petrov é um espelho que reflete a verdade que preferíamos ignorar."</p>
+</div>
+<div class="p-8 bg-card border-2 border-primary war-border">
+<div class="flex items-center gap-4 mb-6">
+<img alt="Dmitri Volkov" class="w-16 h-16 rounded-full object-cover border-2 border-primary" src="assets/leitor-dmitri.webp" loading="lazy" decoding="async">
+<div>
+<h3 class="font-heading text-lg text-primary font-bold">Dmitri Volkov</h3>
+<p class="font-body text-sm text-foreground/70">Jornalista Investigativo</p>
+</div>
+</div>
+<p class="font-body text-foreground/85 leading-relaxed italic">"A narrativa de Renan expõe como o Estado manipula a verdade. Cada página me fez questionar o que acreditava saber. Obra imprescindível para quem busca compreender o poder."</p>
+</div>
+<div class="p-8 bg-card border-2 border-primary war-border">
+<div class="flex items-center gap-4 mb-6">
+<img alt="Katya Petrov" class="w-16 h-16 rounded-full object-cover border-2 border-primary" src="assets/leitor-katya.jpg" loading="lazy" decoding="async">
+<div>
+<h3 class="font-heading text-lg text-primary font-bold">Katya Petrov</h3>
+<p class="font-body text-sm text-foreground/70">Ativista Política</p>
+</div>
+</div>
+<p class="font-body text-foreground/85 leading-relaxed italic">"Li Sociedade Felina em uma noite. Não consegui dormir. A transformação de Ivan no deserto é uma metáfora poderosa para o despertar político. Recomendo para todos que querem pensar criticamente."</p>
+</div>
+<div class="p-8 bg-card border-2 border-primary war-border">
+<div class="flex items-center gap-4 mb-6">
+<img alt="Aleksandr Kozlov" class="w-16 h-16 rounded-full object-cover border-2 border-primary" src="assets/leitor-aleksandr.webp" loading="lazy" decoding="async">
+<div>
+<h3 class="font-heading text-lg text-primary font-bold">Aleksandr Kozlov</h3>
+<p class="font-body text-sm text-foreground/70">Escritor e Crítico Literário</p>
+</div>
+</div>
+<p class="font-body text-foreground/85 leading-relaxed italic">"Uma obra magistral de ficção filosófica. Renan Vilas Boas consegue o que poucos autores fazem: entretem enquanto desafiam o leitor a questionar a realidade. Obra de referência."</p>
+</div>
+</div>
+</div>
+</section>
+<section id="autor" class="py-32 bg-card border-b-8 border-primary">
+<div class="container max-w-5xl">
+<h2 class="font-display text-5xl md:text-6xl mb-16 text-primary uppercase font-black">Sobre o Autor</h2>
+<div class="grid md:grid-cols-3 gap-12 items-center">
+<div class="md:col-span-1">
+<figure class="author-photo-frame">
+<img src="assets/autor-renan.webp" alt="Renan Ruan Vilas Boas" class="author-photo" loading="lazy" decoding="async" width="720" height="1280">
+</figure>
+</div>
+<div class="md:col-span-2 space-y-6">
+<h3 class="font-heading text-3xl text-primary uppercase font-bold">Renan Ruan Vilas Boas</h3>
+<p class="font-body text-lg text-foreground/85 leading-relaxed">Eu não escrevo para te agradar. Eu escrevo para implodir as suas certezas. Sociedade Felina é a minha resposta a um mundo anestesiado, dócil e submisso. Eles querem que você continue dormindo; eu desenhei o alarme.</p>
+<p class="font-body text-lg text-foreground/85 leading-relaxed">Este material não é ficção para mentes fracas. É a anatomia do seu próprio cativeiro disfarçada de literatura. A escolha final é sua: feche esta página e volte para o conforto da sua ignorância, ou destranque este dossiê e descubra o preço letal da sua liberdade.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="oferta" class="py-32 bg-primary/30 border-y-8 border-primary">
+<div class="container max-w-3xl text-center space-y-8">
+<div class="offer-panel" aria-label="Oferta especial">
+<h2 class="offer-title">VOCÊ ESTÁ PRONTO?</h2>
+<div class="countdown" role="timer" aria-live="off" aria-label="Tempo restante da oferta">
+<span class="countdown-unit"><strong data-countdown-hours>24</strong><small>horas</small></span>
+<span class="countdown-separator" aria-hidden="true">:</span>
+<span class="countdown-unit"><strong data-countdown-minutes>00</strong><small>minutos</small></span>
+<span class="countdown-separator" aria-hidden="true">:</span>
+<span class="countdown-unit"><strong data-countdown-seconds>00</strong><small>segundos</small></span>
+</div>
+<div class="offer-price">
+<span class="old-price">De <s>R$ 69,90</s> por apenas:</span>
+<strong class="current-price">R$ 47,00</strong>
+<span class="payment-note">Pagamento em até 6x com pequenos acréscimos</span>
+</div>
+</div>
+<p class="font-body text-xl text-foreground/85 leading-relaxed">Esta não é uma leitura confortável. É uma exploração que questiona tudo: poder, liberdade, moralidade, verdade. Se você busca respostas fáceis, procure em outro lugar. Se você busca verdade, mesmo que brutal, então este livro é para você.</p>
+<p class="font-body text-lg text-primary font-bold uppercase tracking-widest">⚠ AVISO: Leitura em tempos de guerra pode resultar em despertar político ⚠</p>
+<div class="flex flex-col md:flex-row gap-6 justify-center pt-8">
+<a href="https://pay.hotmart.com/E106765742W?bid=1784235993918" class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive h-9 has-[&gt;svg]:px-3 bg-primary text-primary-foreground px-10 py-4 text-lg font-bold uppercase tracking-widest transition-all duration-200 hover:bg-primary/80 active:scale-95" data-checkout>Comprar por R$ 47,00</a>
+<a href="#sinopse" class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive bg-transparent shadow-xs dark:bg-transparent dark:border-input dark:hover:bg-input/50 h-9 has-[&gt;svg]:px-3 border-2 border-primary text-primary px-10 py-4 text-lg font-bold uppercase tracking-widest transition-all duration-200 hover:bg-primary/10 active:scale-95" data-cta="sinopse">Ler Amostra</a>
+</div>
+</div>
+</section>
+<footer class="py-16 bg-card border-t-8 border-primary">
+<div class="container text-center space-y-6">
+<p class="font-body text-foreground/70 text-sm uppercase tracking-widest font-bold">© 2026 Renan Ruan Vilas Boas. Todos os direitos reservados.</p>
+<p class="font-body text-foreground/60 text-xs leading-relaxed">SOCIEDADE FELINA: Uma obra de ficção filosófica que questiona o poder, a liberdade, e a natureza da verdade através de uma jornada de transformação brutal em tempos de guerra.</p>
+<div class="pt-4 border-t border-primary/30">
+<p class="font-body text-primary text-xs uppercase tracking-widest font-bold">⚠ AVISO: LEITURA NÃO AUTORIZADA PODE RESULTAR EM PENSAMENTO CRÍTICO ⚠</p>
+</div>
+</div>
+</footer>
+</div>
+</div>
+  <script>
+(() => {
+  const header = document.querySelector('#site-header');
+
+  const updateHeader = () => {
+    header?.classList.toggle('is-scrolled', window.scrollY > 24);
+  };
+
+  updateHeader();
+  window.addEventListener('scroll', updateHeader, { passive: true });
+
+  const storageKey = 'sociedade-felina-offer-deadline-v1';
+  const duration = 24 * 60 * 60 * 1000;
+  let deadline = Number(localStorage.getItem(storageKey));
+
+  if (!Number.isFinite(deadline) || deadline <= Date.now()) {
+    deadline = Date.now() + duration;
+    localStorage.setItem(storageKey, String(deadline));
+  }
+
+  const hoursNode = document.querySelector('[data-countdown-hours]');
+  const minutesNode = document.querySelector('[data-countdown-minutes]');
+  const secondsNode = document.querySelector('[data-countdown-seconds]');
+  const timerNode = document.querySelector('[role="timer"]');
+
+  const pad = value => String(value).padStart(2, '0');
+
+  const updateCountdown = () => {
+    let remaining = deadline - Date.now();
+
+    if (remaining <= 0) {
+      deadline = Date.now() + duration;
+      localStorage.setItem(storageKey, String(deadline));
+      remaining = duration;
+    }
+
+    const totalSeconds = Math.ceil(remaining / 1000);
+    const hours = Math.floor(totalSeconds / 3600);
+    const minutes = Math.floor((totalSeconds % 3600) / 60);
+    const seconds = totalSeconds % 60;
+
+    if (hoursNode) hoursNode.textContent = pad(hours);
+    if (minutesNode) minutesNode.textContent = pad(minutes);
+    if (secondsNode) secondsNode.textContent = pad(seconds);
+    timerNode?.setAttribute('aria-label', `${hours} horas, ${minutes} minutos e ${seconds} segundos restantes`);
+  };
+
+  updateCountdown();
+  window.setInterval(updateCountdown, 1000);
+
+})();
+  </script>
+</body>
+</html>
