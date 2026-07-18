@@ -174,6 +174,58 @@ a[data-checkout] {
   .offer-panel {
     padding-inline: 0.75rem;
   }
+
+  .mobile-bg {
+    background-attachment: scroll !important;
+  }
+
+  .mobile-bg-inicio {
+    background-position: 35% center !important;
+  }
+
+  .mobile-bg-vigilancia {
+    background-position: 50% center !important;
+  }
+
+  .mobile-bg-destruicao {
+    background-position: 54% center !important;
+  }
+
+  #depoimentos .reader-photo {
+    width: 4.5rem;
+    height: 4.5rem;
+    flex: 0 0 auto;
+  }
+
+  #depoimentos .reader-photo-marina {
+    object-position: 50% 30%;
+  }
+
+  #depoimentos .reader-photo-dmitri {
+    object-position: 65% 32%;
+  }
+
+  #depoimentos .reader-photo-katya {
+    object-position: 50% 40%;
+  }
+
+  #depoimentos .reader-photo-aleksandr {
+    object-position: 50% 30%;
+  }
+
+  #autor .author-photo-frame {
+    width: min(100%, 20rem);
+    aspect-ratio: 1 / 1;
+  }
+
+  #autor .author-photo {
+    object-position: center 8%;
+  }
+
+  #destruicao-visual h2 {
+    font-size: clamp(2.75rem, 14vw, 3.5rem);
+    overflow-wrap: anywhere;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -214,7 +266,7 @@ a[data-checkout] {
 </div>
 </div>
 <section id="inicio" class="relative w-full h-screen flex items-center justify-center overflow-hidden pt-20 war-scanlines">
-<div class="absolute inset-0 bg-cover bg-center z-0" style="background-image: url(&quot;assets/hero-sociedade-felina.webp&quot;); background-attachment: fixed;">
+<div class="absolute inset-0 bg-cover bg-center z-0 mobile-bg mobile-bg-inicio" style="background-image: url(&quot;assets/hero-sociedade-felina.webp&quot;); background-attachment: fixed;">
 <div class="absolute inset-0 bg-gradient-to-b from-black/50 via-black/70 to-black/90">
 </div>
 <div class="absolute inset-0 bg-red-900/20 mix-blend-multiply">
@@ -253,7 +305,7 @@ a[data-checkout] {
 </div>
 </section>
 <section class="relative w-full h-screen flex items-center justify-center overflow-hidden">
-<div class="absolute inset-0 bg-cover bg-center z-0" style="background-image: url(&quot;assets/hero-vigilancia.webp&quot;); background-attachment: fixed;">
+<div class="absolute inset-0 bg-cover bg-center z-0 mobile-bg mobile-bg-vigilancia" style="background-image: url(&quot;assets/hero-vigilancia.webp&quot;); background-attachment: fixed;">
 <div class="absolute inset-0 bg-gradient-to-r from-black/90 via-black/70 to-black/50">
 </div>
 <div class="absolute inset-0 bg-red-900/30 mix-blend-multiply">
@@ -296,8 +348,8 @@ a[data-checkout] {
 </div>
 </div>
 </section>
-<section class="relative w-full h-screen flex items-center justify-center overflow-hidden">
-<div class="absolute inset-0 bg-cover bg-center z-0" style="background-image: url(&quot;assets/hero-destruicao.webp&quot;); background-attachment: fixed;">
+<section id="destruicao-visual" class="relative w-full h-screen flex items-center justify-center overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center z-0 mobile-bg mobile-bg-destruicao" style="background-image: url(&quot;assets/hero-destruicao.webp&quot;); background-attachment: fixed;">
 <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/80 to-transparent">
 </div>
 <div class="absolute inset-0 bg-red-900/40 mix-blend-multiply">
@@ -315,7 +367,7 @@ a[data-checkout] {
 <div class="grid md:grid-cols-2 gap-8">
 <div class="p-8 bg-card border-2 border-primary war-border">
 <div class="flex items-center gap-4 mb-6">
-<img alt="Marina Sokolov" class="w-16 h-16 rounded-full object-cover border-2 border-primary" src="assets/leitor-marina.webp" loading="lazy" decoding="async">
+<img alt="Marina Sokolov" class="w-16 h-16 rounded-full object-cover border-2 border-primary reader-photo reader-photo-marina" src="assets/leitor-marina.webp" loading="lazy" decoding="async">
 <div>
 <h3 class="font-heading text-lg text-primary font-bold">Marina Sokolov</h3>
 <p class="font-body text-sm text-foreground/70">Professora de Filosofia</p>
@@ -325,7 +377,7 @@ a[data-checkout] {
 </div>
 <div class="p-8 bg-card border-2 border-primary war-border">
 <div class="flex items-center gap-4 mb-6">
-<img alt="Dmitri Volkov" class="w-16 h-16 rounded-full object-cover border-2 border-primary" src="assets/leitor-dmitri.webp" loading="lazy" decoding="async">
+<img alt="Dmitri Volkov" class="w-16 h-16 rounded-full object-cover border-2 border-primary reader-photo reader-photo-dmitri" src="assets/leitor-dmitri.webp" loading="lazy" decoding="async">
 <div>
 <h3 class="font-heading text-lg text-primary font-bold">Dmitri Volkov</h3>
 <p class="font-body text-sm text-foreground/70">Jornalista Investigativo</p>
@@ -335,7 +387,7 @@ a[data-checkout] {
 </div>
 <div class="p-8 bg-card border-2 border-primary war-border">
 <div class="flex items-center gap-4 mb-6">
-<img alt="Katya Petrov" class="w-16 h-16 rounded-full object-cover border-2 border-primary" src="assets/leitor-katya.jpg" loading="lazy" decoding="async">
+<img alt="Katya Petrov" class="w-16 h-16 rounded-full object-cover border-2 border-primary reader-photo reader-photo-katya" src="assets/leitor-katya.jpg" loading="lazy" decoding="async">
 <div>
 <h3 class="font-heading text-lg text-primary font-bold">Katya Petrov</h3>
 <p class="font-body text-sm text-foreground/70">Ativista Política</p>
@@ -345,7 +397,7 @@ a[data-checkout] {
 </div>
 <div class="p-8 bg-card border-2 border-primary war-border">
 <div class="flex items-center gap-4 mb-6">
-<img alt="Aleksandr Kozlov" class="w-16 h-16 rounded-full object-cover border-2 border-primary" src="assets/leitor-aleksandr.webp" loading="lazy" decoding="async">
+<img alt="Aleksandr Kozlov" class="w-16 h-16 rounded-full object-cover border-2 border-primary reader-photo reader-photo-aleksandr" src="assets/leitor-aleksandr.webp" loading="lazy" decoding="async">
 <div>
 <h3 class="font-heading text-lg text-primary font-bold">Aleksandr Kozlov</h3>
 <p class="font-body text-sm text-foreground/70">Escritor e Crítico Literário</p>
