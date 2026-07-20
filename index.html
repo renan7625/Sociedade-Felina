@@ -41,6 +41,200 @@ a[data-checkout] {
   text-decoration: none;
 }
 
+#depoimentos[hidden] {
+  display: none !important;
+}
+
+.hero-section {
+  min-height: 100svh;
+  height: auto;
+  padding-top: 11rem;
+  padding-bottom: 4rem;
+}
+
+.hero-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(18rem, 0.9fr);
+  grid-template-areas:
+    "copy product"
+    "action product";
+  align-items: center;
+  gap: 1.5rem clamp(2rem, 5vw, 5rem);
+  width: min(100%, 76rem);
+}
+
+.hero-copy {
+  grid-area: copy;
+  display: grid;
+  gap: 1.75rem;
+  text-align: left;
+}
+
+.hero-copy .hero-quote {
+  margin-left: 0;
+}
+
+.hero-product {
+  grid-area: product;
+  display: grid;
+  place-items: center;
+  min-width: 0;
+  pointer-events: none;
+}
+
+.hero-product img {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 40rem;
+  aspect-ratio: 2 / 3;
+  object-fit: contain;
+  filter: drop-shadow(0 1.5rem 2.5rem rgba(0, 0, 0, 0.72));
+  -webkit-mask-image: radial-gradient(ellipse 78% 88% at center, #000 62%, transparent 100%);
+  mask-image: radial-gradient(ellipse 78% 88% at center, #000 62%, transparent 100%);
+}
+
+.hero-action {
+  grid-area: action;
+  display: grid;
+  justify-items: start;
+  gap: 0.25rem;
+}
+
+.purchase-button {
+  min-height: 3.25rem;
+  white-space: normal;
+  text-align: center;
+}
+
+.purchase-trust {
+  display: grid;
+  gap: 0.7rem;
+  width: min(100%, 42rem);
+  margin-top: 0.9rem;
+}
+
+.payment-badges {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+}
+
+.hero-action .payment-badges {
+  justify-content: flex-start;
+}
+
+.payment-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  min-height: 2.35rem;
+  padding: 0.38rem 0.65rem;
+  color: rgba(255, 255, 255, 0.88);
+  background: rgba(5, 5, 5, 0.86);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 0.4rem;
+  box-shadow: 0 0.35rem 1rem rgba(0, 0, 0, 0.28);
+  font-family: 'Inter', sans-serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.02em;
+  line-height: 1;
+}
+
+.payment-badge svg {
+  width: 1.25rem;
+  height: 1.25rem;
+  flex: 0 0 auto;
+}
+
+.payment-badge-pix svg {
+  color: #32bcad;
+  fill: currentColor;
+}
+
+.mastercard-mark {
+  position: relative;
+  display: inline-block;
+  width: 1.7rem;
+  height: 1rem;
+}
+
+.mastercard-mark::before,
+.mastercard-mark::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+}
+
+.mastercard-mark::before {
+  left: 0;
+  background: #eb001b;
+}
+
+.mastercard-mark::after {
+  right: 0;
+  background: #f79e1b;
+  opacity: 0.9;
+}
+
+.visa-word {
+  color: #4f79df;
+  font-size: 1rem;
+  font-style: italic;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+}
+
+.payment-badge-hotmart {
+  border-color: rgba(243, 76, 54, 0.5);
+}
+
+.payment-badge-hotmart svg {
+  color: #f34c36;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.8;
+}
+
+.payment-badge-hotmart span {
+  display: grid;
+  gap: 0.12rem;
+  text-align: left;
+}
+
+.payment-badge-hotmart strong {
+  font-size: 0.68rem;
+}
+
+.payment-badge-hotmart small {
+  color: rgba(255, 255, 255, 0.62);
+  font-size: 0.52rem;
+  text-transform: uppercase;
+}
+
+.guarantee-note {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.78);
+  font-family: 'Inter', sans-serif;
+  font-size: 0.76rem;
+  font-weight: 600;
+  line-height: 1.45;
+  text-align: center;
+}
+
+.hero-action .guarantee-note {
+  text-align: left;
+}
+
 .offer-panel {
   width: min(100%, 44rem);
   margin: 0 auto;
@@ -134,6 +328,102 @@ a[data-checkout] {
   text-transform: uppercase;
 }
 
+.product-details {
+  margin: 0 0 0.55rem;
+  color: rgba(255, 255, 255, 0.82);
+  font-family: 'Inter', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  line-height: 1.45;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.hero-action .product-details {
+  text-align: left;
+}
+
+.purchase-toast {
+  position: fixed;
+  left: 1rem;
+  bottom: max(1rem, env(safe-area-inset-bottom));
+  z-index: 70;
+  display: grid;
+  grid-template-columns: 2.5rem minmax(0, 1fr);
+  align-items: center;
+  gap: 0.8rem;
+  width: min(calc(100% - 2rem), 23rem);
+  padding: 0.85rem 1rem;
+  color: rgba(255, 255, 255, 0.92);
+  background: rgba(5, 5, 5, 0.96);
+  border: 1px solid rgba(220, 20, 60, 0.72);
+  border-radius: 0.55rem;
+  box-shadow: 0 1rem 2.5rem rgba(0, 0, 0, 0.58);
+  backdrop-filter: blur(12px);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(1rem);
+  transition:
+    opacity 220ms ease,
+    transform 220ms ease,
+    visibility 220ms ease;
+}
+
+.purchase-toast.is-visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.purchase-toast-icon {
+  display: grid;
+  place-items: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  color: #fff;
+  background: var(--primary);
+  border-radius: 50%;
+  box-shadow: 0 0 1.25rem rgba(220, 20, 60, 0.36);
+}
+
+.purchase-toast-icon svg {
+  width: 1.35rem;
+  height: 1.35rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 2;
+}
+
+.purchase-toast-copy {
+  display: grid;
+  gap: 0.18rem;
+  min-width: 0;
+  font-family: 'Inter', sans-serif;
+}
+
+.purchase-toast-copy strong {
+  color: var(--primary);
+  font-size: 0.88rem;
+}
+
+.purchase-toast-copy span {
+  color: rgba(255, 255, 255, 0.76);
+  font-size: 0.76rem;
+  line-height: 1.4;
+}
+
+.purchase-toast-copy small {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
 .author-photo-frame {
   position: relative;
   width: min(100%, 22rem);
@@ -173,6 +463,66 @@ a[data-checkout] {
 
   .offer-panel {
     padding-inline: 0.75rem;
+  }
+
+  .hero-section {
+    min-height: auto;
+    padding-top: 10rem;
+    padding-bottom: 3.5rem;
+  }
+
+  .hero-layout {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas:
+      "copy"
+      "product"
+      "action";
+    gap: 0.75rem;
+  }
+
+  .hero-copy {
+    gap: 1.1rem;
+    text-align: center;
+  }
+
+  .hero-copy .hero-quote {
+    margin-inline: auto;
+  }
+
+  .hero-product img {
+    max-width: min(62vw, 15rem);
+    max-height: 13.5rem;
+  }
+
+  .hero-action {
+    justify-items: center;
+  }
+
+  .purchase-button {
+    width: min(100%, 23rem);
+  }
+
+  .hero-action .payment-badges {
+    justify-content: center;
+  }
+
+  .hero-action .guarantee-note {
+    text-align: center;
+  }
+
+  .hero-action .product-details {
+    text-align: center;
+  }
+
+  .purchase-toast {
+    left: 0.75rem;
+    bottom: calc(4.75rem + env(safe-area-inset-bottom));
+    width: calc(100% - 1.5rem);
+  }
+
+  .payment-badge {
+    min-height: 2.2rem;
+    padding-inline: 0.55rem;
   }
 
   .mobile-bg {
@@ -255,9 +605,8 @@ a[data-checkout] {
 <nav class="hidden md:flex items-center gap-8">
 <a href="#sinopse" class="text-foreground/80 hover:text-primary transition-colors duration-200 text-sm font-body">Sinopse</a>
 <a href="#autor" class="text-foreground/80 hover:text-primary transition-colors duration-200 text-sm font-body">Sobre o Autor</a>
-<a href="#depoimentos" class="text-foreground/80 hover:text-primary transition-colors duration-200 text-sm font-body">Depoimentos</a>
 </nav>
-<a href="https://pay.hotmart.com/E106765742W?bid=1784235993918" class="bg-primary text-primary-foreground px-6 py-2 rounded-md hover:shadow-lg hover:shadow-primary/50 transition-all duration-300 text-sm font-medium" data-checkout>Comprar Agora</a>
+<a href="#oferta" class="bg-primary text-primary-foreground px-6 py-2 rounded-md hover:shadow-lg hover:shadow-primary/50 transition-all duration-300 text-sm font-medium" data-cta="oferta">Garanta seu E-book</a>
 </div>
 </header>
 <div class="fixed top-20 left-0 right-0 z-50 bg-primary/90 py-3 px-4 war-alert">
@@ -265,18 +614,41 @@ a[data-checkout] {
 <p class="font-body text-sm uppercase tracking-widest font-bold">⚠ ESTADO DE ALERTA: ATAQUES TERRORISTAS EM ANDAMENTO ⚠</p>
 </div>
 </div>
-<section id="inicio" class="relative w-full h-screen flex items-center justify-center overflow-hidden pt-20 war-scanlines">
+<section id="inicio" class="hero-section relative w-full flex items-center justify-center overflow-hidden war-scanlines">
 <div class="absolute inset-0 bg-cover bg-center z-0 mobile-bg mobile-bg-inicio" style="background-image: url(&quot;assets/hero-sociedade-felina.webp&quot;); background-attachment: fixed;">
 <div class="absolute inset-0 bg-gradient-to-b from-black/50 via-black/70 to-black/90">
 </div>
 <div class="absolute inset-0 bg-red-900/20 mix-blend-multiply">
 </div>
 </div>
-<div class="relative z-10 container max-w-4xl text-center space-y-8">
+<div class="relative z-10 container hero-layout">
+<div class="hero-copy">
 <h1 class="font-display text-6xl md:text-8xl font-black text-primary drop-shadow-2xl">SOCIEDADE FELINA</h1>
 <p class="font-body text-xl md:text-2xl text-foreground/90 font-bold tracking-wider">Uma Jornada de Transformação Através do Caos</p>
-<p class="font-body text-lg text-foreground/80 italic border-l-4 border-primary pl-6 max-w-2xl mx-auto">"Os homens acreditam ser livres porque são conscientes de suas ações, mas ignorantes das causas que as determinam." — Spinoza</p>
-<a href="#sinopse" class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive h-9 has-[&gt;svg]:px-3 bg-primary text-primary-foreground px-10 py-4 text-lg font-bold uppercase tracking-widest transition-all duration-200 hover:bg-primary/80 active:scale-95" data-cta="sinopse">Descubra a Verdade</a>
+<p class="hero-quote font-body text-lg text-foreground/80 italic border-l-4 border-primary pl-6 max-w-2xl">"Os homens acreditam ser livres porque são conscientes de suas ações, mas ignorantes das causas que as determinam." — Spinoza</p>
+</div>
+<figure class="hero-product" aria-label="Mockup 3D do e-book Sociedade Felina">
+<img src="assets/mockup-sociedade-felina-oficial.webp" alt="Mockup 3D do e-book Sociedade Felina com a capa oficial, de Renan Ruan Vilas Boas" width="768" height="1152" decoding="async" fetchpriority="high">
+</figure>
+<div class="hero-action">
+<p class="product-details">E-book completo • 144 páginas • acesso imediato</p>
+<a href="https://pay.hotmart.com/E106765742W?bid=1784235993918" class="purchase-button inline-flex items-center justify-center gap-2 rounded-md disabled:pointer-events-none disabled:opacity-50 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] bg-primary text-primary-foreground px-8 py-4 text-base md:text-lg font-bold uppercase tracking-wider transition-all duration-200 hover:bg-primary/80 active:scale-95" data-checkout>Garanta o seu exemplar (E-book)</a>
+<div class="purchase-trust" aria-label="Pagamento seguro e garantia">
+<div class="payment-badges" aria-label="Formas de pagamento aceitas">
+<span class="payment-badge payment-badge-pix" title="Pix">
+<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2.7 4.2 4.2a2.7 2.7 0 0 0 3.8 0l.3-.3 1.2 1.2-.3.3a4.4 4.4 0 0 1-6.2 0L12 5.1 9 8.1a4.4 4.4 0 0 1-6.2 0l-.3-.3 1.2-1.2.3.3a2.7 2.7 0 0 0 3.8 0L12 2.7Zm0 16.2 3-3a4.4 4.4 0 0 1 6.2 0l.3.3-1.2 1.2-.3-.3a2.7 2.7 0 0 0-3.8 0L12 21.3l-4.2-4.2a2.7 2.7 0 0 0-3.8 0l-.3.3-1.2-1.2.3-.3a4.4 4.4 0 0 1 6.2 0l3 3Z"/></svg>
+<strong>PIX</strong>
+</span>
+<span class="payment-badge" title="Mastercard"><span class="mastercard-mark" aria-hidden="true"></span><strong>mastercard</strong></span>
+<span class="payment-badge" title="Visa"><strong class="visa-word">VISA</strong></span>
+<span class="payment-badge payment-badge-hotmart" title="Transação segura pela Hotmart">
+<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5 20 6v5.6c0 4.7-3.1 8.5-8 10-4.9-1.5-8-5.3-8-10V6l8-3.5Z"/><path d="m8.5 12 2.2 2.2 4.8-5"/></svg>
+<span><strong>HOTMART</strong><small>Transação segura</small></span>
+</span>
+</div>
+<p class="guarantee-note">Garantia Incondicional de 7 Dias. Acesso Imediato e Seguro.</p>
+</div>
+</div>
 </div>
 </section>
 <section class="py-8 bg-primary/30 border-y-4 border-primary">
@@ -361,7 +733,7 @@ a[data-checkout] {
 <p class="font-body text-lg text-foreground/70 drop-shadow-lg mt-6 italic">A guerra não termina com a queda do poder: ela apenas muda de forma.</p>
 </div>
 </section>
-<section id="depoimentos" class="py-32 bg-background border-b-8 border-primary">
+<section id="depoimentos" class="py-32 bg-background border-b-8 border-primary" hidden aria-hidden="true">
 <div class="container max-w-5xl">
 <h2 class="font-display text-5xl md:text-6xl mb-16 text-primary uppercase font-black">Depoimentos de Leitores</h2>
 <div class="grid md:grid-cols-2 gap-8">
@@ -429,10 +801,8 @@ a[data-checkout] {
 <div class="container max-w-3xl text-center space-y-8">
 <div class="offer-panel" aria-label="Oferta especial">
 <h2 class="offer-title">VOCÊ ESTÁ PRONTO?</h2>
-<div class="countdown" role="timer" aria-live="off" aria-label="Tempo restante da oferta">
-<span class="countdown-unit"><strong data-countdown-hours>24</strong><small>horas</small></span>
-<span class="countdown-separator" aria-hidden="true">:</span>
-<span class="countdown-unit"><strong data-countdown-minutes>00</strong><small>minutos</small></span>
+<div class="countdown" role="timer" aria-live="off" aria-label="15 minutos restantes">
+<span class="countdown-unit"><strong data-countdown-minutes>15</strong><small>minutos</small></span>
 <span class="countdown-separator" aria-hidden="true">:</span>
 <span class="countdown-unit"><strong data-countdown-seconds>00</strong><small>segundos</small></span>
 </div>
@@ -440,12 +810,28 @@ a[data-checkout] {
 <span class="old-price">De <s>R$ 69,90</s> por apenas:</span>
 <strong class="current-price">R$ 47,00</strong>
 <span class="payment-note">Pagamento em até 6x com pequenos acréscimos</span>
+<span class="product-details">E-book completo • 144 páginas • acesso imediato</span>
 </div>
 </div>
 <p class="font-body text-xl text-foreground/85 leading-relaxed">Esta não é uma leitura confortável. É uma exploração que questiona tudo: poder, liberdade, moralidade, verdade. Se você busca respostas fáceis, procure em outro lugar. Se você busca verdade, mesmo que brutal, então este livro é para você.</p>
 <p class="font-body text-lg text-primary font-bold uppercase tracking-widest">⚠ AVISO: Leitura em tempos de guerra pode resultar em despertar político ⚠</p>
-<div class="flex flex-col md:flex-row gap-6 justify-center pt-8">
-<a href="https://pay.hotmart.com/E106765742W?bid=1784235993918" class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive h-9 has-[&gt;svg]:px-3 bg-primary text-primary-foreground px-10 py-4 text-lg font-bold uppercase tracking-widest transition-all duration-200 hover:bg-primary/80 active:scale-95" data-checkout>Comprar por R$ 47,00</a>
+<div class="grid justify-items-center pt-8">
+<a href="https://pay.hotmart.com/E106765742W?bid=1784235993918" class="purchase-button inline-flex items-center justify-center gap-2 rounded-md disabled:pointer-events-none disabled:opacity-50 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] bg-primary text-primary-foreground px-8 md:px-10 py-4 text-base md:text-lg font-bold uppercase tracking-wider transition-all duration-200 hover:bg-primary/80 active:scale-95" data-checkout>Garanta seu E-book por R$ 47,00</a>
+<div class="purchase-trust" aria-label="Pagamento seguro e garantia">
+<div class="payment-badges" aria-label="Formas de pagamento aceitas">
+<span class="payment-badge payment-badge-pix" title="Pix">
+<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2.7 4.2 4.2a2.7 2.7 0 0 0 3.8 0l.3-.3 1.2 1.2-.3.3a4.4 4.4 0 0 1-6.2 0L12 5.1 9 8.1a4.4 4.4 0 0 1-6.2 0l-.3-.3 1.2-1.2.3.3a2.7 2.7 0 0 0 3.8 0L12 2.7Zm0 16.2 3-3a4.4 4.4 0 0 1 6.2 0l.3.3-1.2 1.2-.3-.3a2.7 2.7 0 0 0-3.8 0L12 21.3l-4.2-4.2a2.7 2.7 0 0 0-3.8 0l-.3.3-1.2-1.2.3-.3a4.4 4.4 0 0 1 6.2 0l3 3Z"/></svg>
+<strong>PIX</strong>
+</span>
+<span class="payment-badge" title="Mastercard"><span class="mastercard-mark" aria-hidden="true"></span><strong>mastercard</strong></span>
+<span class="payment-badge" title="Visa"><strong class="visa-word">VISA</strong></span>
+<span class="payment-badge payment-badge-hotmart" title="Transação segura pela Hotmart">
+<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5 20 6v5.6c0 4.7-3.1 8.5-8 10-4.9-1.5-8-5.3-8-10V6l8-3.5Z"/><path d="m8.5 12 2.2 2.2 4.8-5"/></svg>
+<span><strong>HOTMART</strong><small>Transação segura</small></span>
+</span>
+</div>
+<p class="guarantee-note">Garantia Incondicional de 7 Dias. Acesso Imediato e Seguro.</p>
+</div>
 </div>
 </div>
 </section>
@@ -458,6 +844,16 @@ a[data-checkout] {
 </div>
 </div>
 </footer>
+<div class="purchase-toast" data-benefit-toast role="status" aria-live="polite" aria-atomic="true" aria-hidden="true">
+<span class="purchase-toast-icon" aria-hidden="true">
+<svg viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></svg>
+</span>
+<span class="purchase-toast-copy">
+<strong data-benefit-title></strong>
+<span data-benefit-message></span>
+<small>Informação da oferta</small>
+</span>
+</div>
 </div>
 </div>
   <script>
@@ -471,8 +867,8 @@ a[data-checkout] {
   updateHeader();
   window.addEventListener('scroll', updateHeader, { passive: true });
 
-  const storageKey = 'sociedade-felina-offer-deadline-v1';
-  const duration = 24 * 60 * 60 * 1000;
+  const storageKey = 'sociedade-felina-offer-deadline-v2';
+  const duration = 15 * 60 * 1000;
   let deadline = Number(localStorage.getItem(storageKey));
 
   if (!Number.isFinite(deadline) || deadline <= Date.now()) {
@@ -480,7 +876,6 @@ a[data-checkout] {
     localStorage.setItem(storageKey, String(deadline));
   }
 
-  const hoursNode = document.querySelector('[data-countdown-hours]');
   const minutesNode = document.querySelector('[data-countdown-minutes]');
   const secondsNode = document.querySelector('[data-countdown-seconds]');
   const timerNode = document.querySelector('[role="timer"]');
@@ -497,18 +892,81 @@ a[data-checkout] {
     }
 
     const totalSeconds = Math.ceil(remaining / 1000);
-    const hours = Math.floor(totalSeconds / 3600);
-    const minutes = Math.floor((totalSeconds % 3600) / 60);
+    const minutes = Math.floor(totalSeconds / 60);
     const seconds = totalSeconds % 60;
 
-    if (hoursNode) hoursNode.textContent = pad(hours);
     if (minutesNode) minutesNode.textContent = pad(minutes);
     if (secondsNode) secondsNode.textContent = pad(seconds);
-    timerNode?.setAttribute('aria-label', `${hours} horas, ${minutes} minutos e ${seconds} segundos restantes`);
+    timerNode?.setAttribute('aria-label', `${minutes} minutos e ${seconds} segundos restantes`);
   };
 
   updateCountdown();
   window.setInterval(updateCountdown, 1000);
+
+  const benefitToast = document.querySelector('[data-benefit-toast]');
+  const benefitTitleNode = document.querySelector('[data-benefit-title]');
+  const benefitMessageNode = document.querySelector('[data-benefit-message]');
+  const benefits = [
+    {
+      title: 'Acesso imediato',
+      message: 'Acesso liberado imediatamente após confirmação.'
+    },
+    {
+      title: 'Transação segura',
+      message: 'Transação criptografada e blindada pela Hotmart.'
+    },
+    {
+      title: 'Garantia ativada',
+      message: 'Garantia incondicional de 7 dias ativada.'
+    }
+  ];
+  let benefitToastTimeout;
+  let benefitScheduleTimeout;
+  let lastBenefitIndex = -1;
+
+  const randomBetween = (minimum, maximum) =>
+    Math.floor(Math.random() * (maximum - minimum + 1)) + minimum;
+
+  const getNextBenefit = () => {
+    let index = randomBetween(0, benefits.length - 1);
+
+    while (benefits.length > 1 && index === lastBenefitIndex) {
+      index = randomBetween(0, benefits.length - 1);
+    }
+
+    lastBenefitIndex = index;
+    return benefits[index];
+  };
+
+  const showBenefit = () => {
+    if (!benefitToast || !benefitTitleNode || !benefitMessageNode) return;
+
+    const benefit = getNextBenefit();
+    window.clearTimeout(benefitToastTimeout);
+    benefitTitleNode.textContent = benefit.title;
+    benefitMessageNode.textContent = benefit.message;
+    benefitToast.setAttribute('aria-hidden', 'false');
+    benefitToast.classList.add('is-visible');
+
+    benefitToastTimeout = window.setTimeout(() => {
+      benefitToast.classList.remove('is-visible');
+      benefitToast.setAttribute('aria-hidden', 'true');
+    }, 5500);
+  };
+
+  const scheduleBenefit = initial => {
+    const delay = initial
+      ? randomBetween(8000, 15000)
+      : randomBetween(20000, 45000);
+
+    window.clearTimeout(benefitScheduleTimeout);
+    benefitScheduleTimeout = window.setTimeout(() => {
+      if (!document.hidden) showBenefit();
+      scheduleBenefit(false);
+    }, delay);
+  };
+
+  scheduleBenefit(true);
 
 })();
   </script>
