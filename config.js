@@ -25,7 +25,7 @@ window.SITE_CONFIG = {
 
   /* ---------- 2. RASTREAMENTO (só carrega APÓS o consentimento de cookies) ---------- */
   tracking: {
-    ga4:     '',   // ID de métricas do GA4, ex.: 'G-ABCDE12345'
+    ga4:     'G-0ZGH70KNP0',   // ID de métricas do GA4, ex.: 'G-ABCDE12345'
     pixel:   '',   // ID do Meta Pixel (só números), ex.: '123456789012345'
     clarity: 'zjdojaupug'    // ID do projeto no Microsoft Clarity, ex.: 'abcd1efg2h'
   },
