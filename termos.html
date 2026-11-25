@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Termos de Uso | Sociedade Felina</title>
+<meta name="robots" content="noindex,follow">
+<meta name="theme-color" content="#0A0A0D">
+<style>
+:root{--bg:#0A0A0D;--line:#262936;--tx:#F5F5F7;--mu:#A1A1AA;--ac2:#DDB255}
+*{box-sizing:border-box;margin:0}
+body{background:var(--bg);color:var(--tx);font:400 1.0625rem/1.75 Inter,system-ui,-apple-system,"Segoe UI",sans-serif}
+.wrap{max-width:780px;margin:0 auto;padding:40px 22px 90px}
+a{color:var(--ac2)}
+h1{font-family:Georgia,serif;font-size:clamp(2rem,6vw,2.8rem);line-height:1.15;margin:18px 0 8px}
+h2{font-family:Georgia,serif;font-size:1.35rem;margin:2em 0 .5em;color:var(--ac2)}
+p,ul{margin-bottom:1em;color:#d4d4d8}ul{padding-left:1.3em}li{margin-bottom:.4em}
+.mu{color:var(--mu);font-size:.92rem}
+.back{display:inline-block;margin-bottom:6px;font-size:.92rem}
+</style>
+</head>
+<body>
+<div class="wrap">
+<a class="back" href="./">← Voltar ao site</a>
+
+<h1>Termos de Uso</h1>
+<p class="mu">Regras para uso deste site e para a compra do e-book “Sociedade Felina”.</p>
+
+<h2>1. Quem vende</h2>
+<p>O e-book é oferecido por <span data-fill="razao"></span><span data-if="cnpj">, CNPJ/CPF <span data-fill="cnpj"></span></span>. <span data-if="email">Suporte: <span data-fill="email"></span>.</span></p>
+
+<h2>2. O produto</h2>
+<p>“Sociedade Felina” é um e-book (arquivo digital) de ficção filosófica com 144 páginas, de autoria de Renan Ruan Vilas Boas. Não há versão impressa nesta oferta.</p>
+
+<h2>3. Compra e pagamento</h2>
+<p>A compra é feita no ambiente seguro da Hotmart, que processa o pagamento (Pix ou cartão) e libera o acesso ao livro após a confirmação. Valores e condições exibidos no checkout prevalecem sobre qualquer informação deste site.</p>
+
+<h2>4. Garantia e reembolso</h2>
+<p>Você pode pedir o reembolso integral em até 7 (sete) dias corridos a partir da compra, conforme o Art. 49 do Código de Defesa do Consumidor e as regras da Hotmart, diretamente pela plataforma.</p>
+
+<h2>5. Licença de uso e direitos autorais</h2>
+<p>A compra dá a você licença pessoal e intransferível para ler o e-book. É proibido copiar, revender, compartilhar publicamente ou distribuir o arquivo, no todo ou em parte, sem autorização por escrito do autor.</p>
+
+<h2>6. Limitação de responsabilidade</h2>
+<p>O conteúdo é uma obra de ficção com reflexões filosóficas e não substitui aconselhamento profissional. Não nos responsabilizamos por indisponibilidades momentâneas do site ou de plataformas de terceiros.</p>
+
+<h2>7. Foro</h2>
+<p>Fica eleito o foro do domicílio do consumidor para resolver conflitos relativos a estes termos.</p>
+
+<p class="mu">Última atualização: 25/11/2026</p>
+</div>
+<script src="config.js"></script>
+<script>
+/* Preenche dados do vendedor e e-mail de suporte a partir de config.js */
+(function(){
+  var C=window.SITE_CONFIG||{}, L=C.legal||{}, S=C.suporte||{}, E=S.email||{};
+  var map={razao:L.razao||'Renan Ruan Vilas Boas',cnpj:L.cnpj,email:E.ativo&&E.valor?E.valor:''};
+  document.querySelectorAll('[data-if]').forEach(function(el){if(!map[el.getAttribute('data-if')])el.parentNode.removeChild(el)});
+  document.querySelectorAll('[data-fill]').forEach(function(el){el.textContent=map[el.getAttribute('data-fill')]||''});
+})();
+</script>
+</body>
+</html>
