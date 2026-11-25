@@ -1,0 +1,13 @@
+WEBVTT
+
+NOTE
+  Modelo de legenda. Copie este arquivo para depoimento-1.vtt (2, 3...), escreva as falas
+  e informe o caminho em config.js > depoimentos[i].vtt.
+  Formato: horário inicial --> horário final (mm:ss.mmm), e o texto logo abaixo.
+  Dica: gere a transcrição automática no YouTube Studio, CapCut ou Whisper e revise a mão.
+
+00:00.000 --> 00:04.000
+Primeira fala do depoimento aqui.
+
+00:04.000 --> 00:09.500
+Segunda fala aqui. Use no máximo 2 linhas curtas por bloco.
