@@ -27,7 +27,7 @@ window.SITE_CONFIG = {
   tracking: {
     ga4:     '',   // ID de métricas do GA4, ex.: 'G-ABCDE12345'
     pixel:   '',   // ID do Meta Pixel (só números), ex.: '123456789012345'
-    clarity: ''    // ID do projeto no Microsoft Clarity, ex.: 'abcd1efg2h'
+    clarity: 'zjdojaupug'    // ID do projeto no Microsoft Clarity, ex.: 'abcd1efg2h'
   },
   // IMPORTANTE — COMPRA / CONVERSÃO:
   // A compra acontece no domínio da Hotmart. A CONVERSÃO (compra aprovada) deve ser
